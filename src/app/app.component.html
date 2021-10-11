@@ -1,14 +1,14 @@
 <div class="col-sm-12">
-  <div class="col-sm-4">
+  <div class="col-sm-1">
   </div>
-  <div class="col-sm-8">
+  <div class="col-sm-11">
     <div class="container-fluid" style="padding-top:10%;padding-left:30%;">
       <div class="card table-responsive">
 
       <table class="table table-bordered ">
         <tbody >
           <tr>
-            <td colspan="4">
+            <td colspan="7">
               <div class="input-group input-group-sm col-sm-12 m-0 p-0">
                 <div class="col-sm-12 form-control text-lg-right" type="text">{{input}}</div>
               </div>
@@ -19,13 +19,28 @@
             </td>
           </tr>
           <tr>
-            <td colspan="4">
+            <td colspan="7">
               <span>
                 <button class="btn btn-info col-sm-6" type="button" (click)="allClear()">C</button>
                 <button class="btn btn-warning col-sm-3" type="button" (click)="clear()">x</button>
-                <button class="btn btn-secondary col-sm-3" type="button" (click)="pressOperator('/')">/</button>
               </span>
            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('(')">(</button> -->
+            </td>
+            <td>
+              <!-- <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator(')')">)</button> -->
+            </td>
+            <td>-</td>
+            <td>
+              <button class="btn btn-secondary col-sm-3" type="button" (click)="pressOperator('/')">/</button>
+            </td>
+            <td>
+              -
+            </td>
+            <td>-</td>
           </tr>
           <tr>
             <td>
@@ -40,34 +55,61 @@
             <td>
             <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('*')">*</button>
             </td>
+            <td>
+              <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('sqrt')">x&#50;</button>
+             </td>
+             <td>
+              <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('abs')">|x|</button>
+             </td>
+             <td>
+              <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('powerbyTen')">10<sup>x</sup></button>
+             </td>
           </tr>
           <tr>
             <td>
-              <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('7')">7</button>
+              <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('4')">4</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('8')">8</button>
+              <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('5')">5</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('9')">9</button>
+              <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('6')">6</button>
             </td>
             <td>
               <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('-')">-</button>
             </td>
+            <td>
+              <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('squareRoot')">&#8730;</button>
+            </td>
+            <td>
+              <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('getfactorial')">n!</button>
+            </td>
+            <td>
+              <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('log')">log</button>
+             </td>
           </tr>
           <tr>
             <td>
               <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('1')">1</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-outline-secondary" type="button" (click)="pressNum('2')">2</button>
+            <button class="btn btn-lg btn-outline-secondary" type="button" (click)="pressNum('2')">2</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('3')">3</button>
+            <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('3')">3</button>
             </td>
             <td>
             <button class="btn btn-lg btn-secondary" type="button" (click)="pressOperator('+')">+</button>
             </td>
+            <td>
+            <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('divivdedByone')"><sup>1</sup>&frasl;<sub>x</sub></button>
+            </td>
+            <td>
+            <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('getPII')">&#8508;</button>
+            </td>
+            <td>
+            <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('lnlog')">ln</button>
+             </td>
           </tr>
           <tr>
             <td>
@@ -76,8 +118,8 @@
             <td>
               <button class="btn btn-lg btn-outline-secondary" type="button" (click)="pressNum('0')">0</button>
             </td>
-            <td style="padding-right:80%;">
-              <button class="btn btn-lg btn-success" type="button" (click)="getAnswer()">=</button>
+            <td colspan="5">
+              <button class="btn btn-lg btn-success col-sm-6" type="button" (click)="getAnswer()">=</button>
             </td>
 
           </tr>
