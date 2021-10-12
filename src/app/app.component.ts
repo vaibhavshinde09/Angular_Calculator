@@ -115,10 +115,9 @@ export class AppComponent {
     if (lastKey === '/' || lastKey === '*' || lastKey === '-' || lastKey === '+' || lastKey === '(' || lastKey === ')' ||lastKey ==='mc' ||lastKey ==='ms' ||lastKey ==='m-' ||lastKey ==='m+' ||lastKey ==='mr' || lastKey === 'sqrt' ||
      lastKey==='squareRoot' || lastKey==='divivdedByone' ||lastKey==='getfactorial' || lastKey==='getPII' ||
      lastKey==='powerbyTen' || lastKey==='log' || lastKey==='lnlog' || lastKey==='abs' || lastKey==='floor' || lastKey==='ceil' || lastKey==='rand'
-     ||lastKey==='dms'||lastKey==='+-' || lastKey==='powerx3' ||lastKey==='powerx*y')  {
+     ||lastKey==='dms'||lastKey==='+-' || lastKey==='powerx3' ||lastKey==='powerx*y' || lastKey==='deg')  {
       return;
     }
-
      else if(op === 'ms')
      {
        this.input='';
@@ -175,6 +174,12 @@ export class AppComponent {
     else if(op==='powerx*y')
     {
       let ops=Math.pow(opt, opt);
+      this.input=ops.toString();
+      this.calcAnswer();
+    }
+    else if(op==='deg')
+    {
+      let ops=Math.cos(opt*(Math.PI/180));
       this.input=ops.toString();
       this.calcAnswer();
     }
