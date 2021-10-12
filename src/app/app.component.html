@@ -1,8 +1,8 @@
 <div class="col-sm-12">
-  <div class="col-sm-1">
+  <div class="col-sm-4">
   </div>
-  <div class="col-sm-11">
-    <div class="container-fluid" style="padding-top:10%;padding-left:30%;">
+  <div class="col-sm-8">
+    <div class="container-fluid" style="padding-top:2%;padding-left:25%;">
       <div class="card table-responsive">
 
       <table class="table table-bordered ">
@@ -10,11 +10,11 @@
           <tr>
             <td colspan="7">
               <div class="input-group input-group-sm col-sm-12 m-0 p-0">
-                <div class="col-sm-12 form-control text-lg-right" type="text">{{input}}</div>
+                <div class="col-sm-12 form-control text-lg-dark bg-light" type="text">{{input}}<sup *ngIf="MCMRFlag==1">{{MCMR}}</sup></div>
               </div>
               <!-- //Displays the Results -->
               <div class="input-group input-group-sm col-sm-12 m-0 p-0">
-                <div class="form-control text-sm-right" type="text">{{result}}</div>
+                <div class="form-control text-sm-dark bg-light" type="text">{{result}}</div>
               </div>
             </td>
           </tr>
@@ -28,98 +28,178 @@
           </tr>
           <tr>
             <td>
-              <!-- <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('(')">(</button> -->
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('ms')">MS</button>
             </td>
             <td>
-              <!-- <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator(')')">)</button> -->
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('m+')">M+</button>
             </td>
-            <td>-</td>
+            <td>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('m-')">M-</button>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('mr')">MR</button>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('mc')">MC</button>
+            </td>
+            <td>
+              <div class="btn-group">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  &#x22BF;
+                </button>
+                <div class="dropdown-menu">
+                  <table class="">
+                    <tr>
+                      <td>
+                        <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('sin')">sin</button>
+                      </td>
+                      <td>
+                        <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('cos')">cos</button>
+                      </td>
+                      <td>
+                        <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('tan')">tan</button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="btn-group">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  &#x192;
+                </button>
+                <div class="dropdown-menu">
+                  <table class="">
+                    <tr>
+                      <td>
+                        <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('ceil')">ceil</button>
+                      </td>
+                      <td>
+                        <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('floor')">floor</button>
+                      </td>
+                      <td>
+                        <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('abs')">abs</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('rand')">rand</button>
+                      </td>
+                      <td>
+                        <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('dms')">dms</button>
+                      </td>
+                      <td>
+                        <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('deg')">deg</button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('(')">(</button>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator(')')">)</button>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('+-')">&#177;</button>
+             </td>
             <td>
               <button class="btn btn-secondary col-sm-3" type="button" (click)="pressOperator('/')">/</button>
             </td>
             <td>
-              -
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('powerx3')">x<sup>3</sup></button>
+              <!-- <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('sin')">sin</button> -->
             </td>
-            <td>-</td>
+            <td>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('powerx3')"><sup>2</sup>&#8730;x</button>
+             </td>
+            <td>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('powerx*y')">x<sup>y</sup></button>
+            </td>
           </tr>
           <tr>
             <td>
-              <button class="btn btn-lg btn-outline-secondary" type="button" (click)="pressNum('7')">7</button>
+              <button class="btn btn-sm btn-outline-secondary" type="button" (click)="pressNum('7')">7</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-outline-secondary" type="button" (click)="pressNum('8')">8</button>
+              <button class="btn btn-sm btn-outline-secondary" type="button" (click)="pressNum('8')">8</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-outline-secondary" type="button" (click)="pressNum('9')">9</button>
+              <button class="btn btn-sm btn-outline-secondary" type="button" (click)="pressNum('9')">9</button>
             </td>
             <td>
-            <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('*')">*</button>
+            <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('*')">*</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('sqrt')">x&#50;</button>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('sqrt')">x<sup>2</sup></button>
              </td>
              <td>
-              <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('abs')">|x|</button>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('abs')">|x|</button>
              </td>
              <td>
-              <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('powerbyTen')">10<sup>x</sup></button>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('powerbyTen')">10<sup>x</sup></button>
              </td>
           </tr>
           <tr>
             <td>
-              <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('4')">4</button>
+              <button class="btn btn-sm btn-outline-secondary " type="button" (click)="pressNum('4')">4</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('5')">5</button>
+              <button class="btn btn-sm btn-outline-secondary " type="button" (click)="pressNum('5')">5</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('6')">6</button>
+              <button class="btn btn-sm btn-outline-secondary " type="button" (click)="pressNum('6')">6</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('-')">-</button>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('-')">-</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('squareRoot')">&#8730;</button>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('squareRoot')">&#8730;</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('getfactorial')">n!</button>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('getfactorial')">n!</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('log')">log</button>
+              <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('log')">log</button>
              </td>
           </tr>
           <tr>
             <td>
-              <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('1')">1</button>
+              <button class="btn btn-sm btn-outline-secondary " type="button" (click)="pressNum('1')">1</button>
             </td>
             <td>
-            <button class="btn btn-lg btn-outline-secondary" type="button" (click)="pressNum('2')">2</button>
+            <button class="btn btn-sm btn-outline-secondary" type="button" (click)="pressNum('2')">2</button>
             </td>
             <td>
-            <button class="btn btn-lg btn-outline-secondary " type="button" (click)="pressNum('3')">3</button>
+            <button class="btn btn-sm btn-outline-secondary " type="button" (click)="pressNum('3')">3</button>
             </td>
             <td>
-            <button class="btn btn-lg btn-secondary" type="button" (click)="pressOperator('+')">+</button>
+            <button class="btn btn-sm btn-secondary" type="button" (click)="pressOperator('+')">+</button>
             </td>
             <td>
-            <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('divivdedByone')"><sup>1</sup>&frasl;<sub>x</sub></button>
+            <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('divivdedByone')"><sup>1</sup>&frasl;<sub>x</sub></button>
             </td>
             <td>
-            <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('getPII')">&#8508;</button>
+            <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('getPII')">&#8508;</button>
             </td>
             <td>
-            <button class="btn btn-lg btn-secondary " type="button" (click)="pressOperator('lnlog')">ln</button>
+            <button class="btn btn-sm btn-secondary " type="button" (click)="pressOperator('lnlog')">ln</button>
              </td>
           </tr>
           <tr>
             <td>
-              <button class="btn btn-lg btn-outline-secondary" type="button" (click)="pressNum('.')">.</button>
+              <button class="btn btn-sm btn-outline-secondary" type="button" (click)="pressNum('.')">.</button>
             </td>
             <td>
-              <button class="btn btn-lg btn-outline-secondary" type="button" (click)="pressNum('0')">0</button>
+              <button class="btn btn-sm btn-outline-secondary" type="button" (click)="pressNum('0')">0</button>
             </td>
             <td colspan="5">
-              <button class="btn btn-lg btn-success col-sm-6" type="button" (click)="getAnswer()">=</button>
+              <button class="btn btn-sm btn-success col-sm-6" type="button" (click)="getAnswer()">=</button>
             </td>
 
           </tr>
